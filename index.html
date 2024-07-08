@@ -18,9 +18,6 @@
     padding: 0;
     background-color: #222121; /* Grey background */
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   #title-bar {
     background-color: #333;
@@ -33,22 +30,9 @@
     margin: 20px;
     text-align: center;
   }
-  #pdf-container {
-    width: 100%; /* Full width */
-    max-width: 900px; /* Set maximum width */
-    margin: 0 auto; /* Center align the container */
-    background-color: #fff; /* White background for PDF container */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
-    position: relative;
-    padding-bottom: 56.25%; /* Aspect ratio for iframe */
-    height: 0;
-  }
   .pdf-embed {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Full height of the viewport */
     border: none; /* Remove border */
   }
   .pdf-link {
@@ -83,8 +67,8 @@
 
   /* Media query for mobile devices */
   @media only screen and (max-width: 768px) {
-    #pdf-container {
-      display: none; /* Hide PDF container for mobile */
+    .pdf-embed {
+      display: none; /* Hide iframe for mobile */
     }
     .pdf-link {
       display: flex; /* Show PDF link for mobile */
@@ -101,9 +85,8 @@
   <p>Welcome to my CV page! Below you will find my resume showcasing my interests and work in IC Design, In-Memory Computing, and Computer Architecture.</p>
 </div>
 
-<div id="pdf-container">
-  <iframe class="pdf-embed" src="VaibhavResumeMar2024.pdf"></iframe>
-</div>
+<!-- Directly embedding the PDF -->
+<iframe class="pdf-embed" src="VaibhavResumeMar2024.pdf"></iframe>
 
 <!-- Direct link to the PDF file for mobile viewers -->
 <div class="pdf-link">
