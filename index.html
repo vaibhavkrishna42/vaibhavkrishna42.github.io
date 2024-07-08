@@ -94,11 +94,15 @@
   <p style="margin-top: 20px;"><a href="VaibhavResumeMar2024.pdf" class="blue-button">Open in a new tab</a></p>
 </div>
 
-<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<!-- PDF.js files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js"></script>
+
 <script>
+  // URL of the PDF file
   var url = 'VaibhavResumeMar2024.pdf';
 
-  // Loading the PDF
+  // Asynchronous download of the PDF
   var loadingTask = pdfjsLib.getDocument(url);
   loadingTask.promise.then(function(pdf) {
     console.log('PDF loaded');
@@ -132,6 +136,7 @@
       });
     });
   }, function(reason) {
+    // PDF loading error
     console.error(reason);
   });
 </script>
